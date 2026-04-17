@@ -10,6 +10,21 @@
     </style>
 </head>
 <body>
-    <iframe src="https://script.google.com/macros/s/AKfycbz2PRl4DgX_LSVNV6g1L4lirC8ab2Y96kkU8A9fatpjjX031_0XrnPpuzIQwFUv3TvHNg/exec"></iframe>
+    <iframe id="neaFrame" src=""></iframe>
+
+    <script>
+        // 1. Ambil parameter dari URL (misal: ?p=Instruktur)
+        const urlParams = new URLSearchParams(window.location.search);
+        const page = urlParams.get('p') || 'Index';
+
+        // 2. GANTI LINK DI BAWAH INI DENGAN URL WEB APP GOOGLE SCRIPT ANDA
+        const gasUrl = "https://script.google.com/macros/s/AKfycbz2PRl4DgX_LSVNV6g1L4lirC8ab2Y96kkU8A9fatpjjX031_0XrnPpuzIQwFUv3TvHNg/exec";
+
+        // 3. Gabungkan link dengan parameter yang sesuai
+        const finalUrl = gasUrl + "?p=" + page;
+
+        // 4. Masukkan ke dalam Iframe
+        document.getElementById('neaFrame').src = finalUrl;
+    </script>
 </body>
 </html>
